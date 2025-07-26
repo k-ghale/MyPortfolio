@@ -1,13 +1,13 @@
 import mongoose from 'mongoose';
 
-const qualificationSchema = new mongoose.Schema({
-  title: String,
-  firstname: String,
-  lastname: String,
-  email: String,
-  completion: Date,
-  description: String
+const educationSchema = new mongoose.Schema({
+  school: { type: String, required: true },
+  degree: { type: String, required: true },
+  fieldOfStudy: { type: String },
+  startDate: { type: Date },
+  endDate: { type: Date },
+  description: { type: String }
 });
 
-export default mongoose.model('Qualification', qualificationSchema);
+export default mongoose.model('Education', educationSchema);
 
