@@ -17,6 +17,6 @@ app.use('/api/projects', authenticateToken, projectRoutes);
 app.use('/api/contact', contactRoutes);
 
 mongoose.connect(config.mongoUri)
-  .then(() => app.listen(3000, () => console.log('Server running on port 3000')))
+  .then(() => app.listen(config.port || 3000, () => console.log('Server running on port 3000')))
   .catch(err => console.log(err));
 
